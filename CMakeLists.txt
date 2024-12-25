@@ -20,8 +20,9 @@ else()
     )
 endif()
 
+add_subdirectory(lib/FFmpeg )
 add_executable(mvsync src/main.cpp)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
-target_link_libraries(mvsync PRIVATE OpenGL::GL glfw dl)
+target_link_libraries(mvsync PRIVATE FFmpeg OpenGL::GL glfw dl ${EXTRA_LIBS})
