@@ -21,7 +21,8 @@ else()
 endif()
 
 add_subdirectory(lib/FFmpeg )
-add_executable(mvsync src/main.cpp)
+add_executable(mvsync src/main.cpp
+                      src/load_frame.cpp)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
